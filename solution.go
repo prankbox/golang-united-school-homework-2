@@ -19,8 +19,10 @@ var SidesCircle cint = 0
 // CalcSquare(10.0, SidesCircle)
 
 func CalcSquare(sideLen float64, sidesNum cint) float64 {
-	if sidesNum == 3 || sidesNum == 4 {
-		return sideLen * (float64(sidesNum))
+	if sidesNum == 4 {
+		return math.Pow(sideLen, 2.0)
+	} else if sidesNum == 3 {
+		return math.Sqrt(3.0) / 4 * math.Pow(sideLen, 2.0)
 	} else if sidesNum == 0 {
 		return math.Pi * math.Pow(sideLen, 2.0)
 	} else {
